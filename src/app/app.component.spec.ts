@@ -24,6 +24,7 @@ describe('AppComponent', () => {
   }));
 
   it('correct dateStart should be valid', () => {
+    console.log(navigator.userAgent);
     const inputDateStart = fixture.debugElement.query(By.css('[formControlName=dateStart]')).nativeElement;
     inputDateStart.value = 'valid';
     inputDateStart.dispatchEvent(new Event('input'));
