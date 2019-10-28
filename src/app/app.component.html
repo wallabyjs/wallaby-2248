@@ -1,3 +1,7 @@
 <form [formGroup]="form">
-  <input formControlName="dateStart">
-</form>
+  <mat-form-field>
+    <input matInput [matDatepicker]="myDatepicker" formControlName="dateStart" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </mat-form-field>
+  </form>

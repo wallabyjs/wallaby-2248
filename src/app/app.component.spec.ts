@@ -1,8 +1,10 @@
 import { By } from '@angular/platform-browser';
 import { TestBed, async } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
 
 describe('AppComponent', () => {
 
@@ -12,7 +14,9 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        ReactiveFormsModule
+        MaterialModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule
       ],
       declarations: [
         AppComponent
@@ -24,9 +28,8 @@ describe('AppComponent', () => {
   }));
 
   it('correct dateStart should be valid', () => {
-    console.log(navigator.userAgent);
     const inputDateStart = fixture.debugElement.query(By.css('[formControlName=dateStart]')).nativeElement;
-    inputDateStart.value = 'valid';
+    inputDateStart.value = '14.12.1996';
     inputDateStart.dispatchEvent(new Event('input'));
     inputDateStart.dispatchEvent(new Event('change')); // redundant event, can be removed
     fixture.detectChanges();

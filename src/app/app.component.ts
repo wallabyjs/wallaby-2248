@@ -7,5 +7,5 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  form = new FormGroup({ dateStart: new FormControl('boom', Validators.minLength(5)) });
+  form = new FormGroup({ dateStart: new FormControl(new Date('1995-12-17T03:24:00')) });
 }
